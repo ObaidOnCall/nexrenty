@@ -19,6 +19,8 @@ public interface ClientRepoInterface {
 
     Client find(long id) ;
 
+    List<Client> findClients(List<Long> ids) ;
+
     Long count() ;
 
     List<ClientDocs> insertClientDocs(List<ClientDocs> clientDocs) ;

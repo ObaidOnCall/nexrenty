@@ -1,5 +1,6 @@
 package com.nexrenty.clients_service.repositories;
 
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -163,6 +164,21 @@ public class ClientRepo implements ClientRepoInterface{
                                 .setParameter("id", id)
                                 .getSingleResult() ;
         return clientDocs ;
+    }
+
+    @Override
+    public List<Client> findClients(List<Long> ids) {
+        
+        if (ids == null || ids.isEmpty()) {
+            
+            return Collections.emptyList();
+        }
+    
+        String jpql = "SELECT c FROM Client c WHERE c.id IN :ids";
+        
+        return em.createQuery(jpql, Client.class)
+                            .setParameter("ids", ids)
+                            .getResultList();
     }
 
 }
