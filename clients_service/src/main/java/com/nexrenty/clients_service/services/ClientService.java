@@ -135,4 +135,16 @@ public class ClientService {
         }
     }
 
+    public List<ClientResponseDto> findClients(List<Long> ids ) {
+        try {
+            
+            return clientMapper.fromClient(clientRepo.findClients(ids)) ;
+
+        } catch (NoResultException e) {
+            
+            throw new UnableToProccessIteamException(ClientService.ERRORMESSAGE) ;
+
+        }
+    }
+
 }

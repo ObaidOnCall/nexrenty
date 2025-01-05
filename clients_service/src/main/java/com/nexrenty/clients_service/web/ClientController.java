@@ -188,11 +188,26 @@ public class ClientController {
         return clientService.pagenateClients(PageRequest.of(page, pageSize)) ;
     }
 
-    @GetMapping("/{id}")
-    ClientResponseDto findCient(
-        @PathVariable long id 
+    // @GetMapping("/{id}")
+    // ClientResponseDto findCient(
+    //     @PathVariable long id 
+    // ) {
+    //     return clientService.findClient(id) ;
+    // }
+
+
+    @GetMapping("/{ids}")
+    List<ClientResponseDto> findCients(
+
+        @Parameter(
+            description = "Comma-separated list of client IDs to be fetech",
+            required = true,
+            example = "1,2,3",
+            schema = @Schema(type = "string")
+        )
+        @PathVariable List<Long> ids 
     ) {
-        return clientService.findClient(id) ;
+        return clientService.findClients(ids) ;
     }
 
 }
