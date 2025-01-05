@@ -49,7 +49,9 @@ public class SecurityConf {
         "/webjars/**",
         // -- Swagger UI v3 (OpenAPI)
         "/v3/api-docs/**",
-        "/swagger-ui/**" 
+        "/swagger-ui/**"  ,
+
+        "/actuator/**"
 
     };
 
