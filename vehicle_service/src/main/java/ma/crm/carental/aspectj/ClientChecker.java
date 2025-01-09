@@ -18,11 +18,8 @@ import jakarta.persistence.Query;
 import lombok.extern.slf4j.Slf4j;
 import ma.crm.carental.dtos.client.ClientResponseDto;
 import ma.crm.carental.dtos.interfaces.ClientIdentifiable;
-import ma.crm.carental.dtos.vehicule.VehRequsetDto;
-import ma.crm.carental.dtos.violation.ViolationRequestDto;
 import ma.crm.carental.exception.UnableToProccessIteamException;
 import ma.crm.carental.services.ClientServiceClient;
-import ma.crm.carental.tenantfilter.TenantContext;
 
 @Slf4j
 @Aspect
@@ -101,6 +98,8 @@ public class ClientChecker {
 		Set<Long> uniqueClients = new HashSet<>(clients);
 
 		List<ClientResponseDto> clientResponseDtos = clientServiceClient.findClients(clients) ;
+
+		log.debug("Clients retrieved: {} ✅", clientResponseDtos);
 		
 		if (clientResponseDtos.size() != uniqueClients.size()) {
 			throw new UnableToProccessIteamException(ClientChecker.ERRORMESSAGE);
