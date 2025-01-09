@@ -1,0 +1,11 @@
+Advantages:
+
+Simplicity: This approach is cleaner, easier to read, and avoids boilerplate code.
+Type Safety: You no longer need to cast the Principal object to Jwt, which makes the code safer.
+2 - SecurityContextHolder for Advanced Use Cases: 
+If you need more control (e.g., accessing authorities or using other authentication methods), 
+accessing the SecurityContextHolder manually, 
+as you are doing, is perfectly fine. However, 
+the @AuthenticationPrincipal approach should be preferred 
+for typical use cases where you're
+only interested in the user's authentication details.

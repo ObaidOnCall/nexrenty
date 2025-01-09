@@ -1,0 +1,36 @@
+services:
+  postgres:
+    image: postgres:16.2
+    volumes:
+      - postgres_rental_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    networks:
+      - rental_network
+    restart: unless-stopped
+
+  rental:
+    image: lasthour/rentals:1.4
+    environment:
+      DB_HOST: postgres:5432
+      DB_NAME: ${POSTGRES_DB}
+      DB_USER: ${POSTGRES_USER}
+      DB_PASSWORD: ${POSTGRES_PASSWORD}
+
+    ports:
+      - '127.0.0.1:8080:8080'
+
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    networks:
+      - rental_network
+
+volumes:
+  postgres_rental_data:
+    driver: local
+
+networks:
+  rental_network: {}
