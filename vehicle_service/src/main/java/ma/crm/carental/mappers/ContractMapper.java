@@ -12,7 +12,6 @@ import ma.crm.carental.dtos.contract.ContractResponseDto;
 import ma.crm.carental.dtos.deliveryguy.DeliveryGuyResponseDto;
 import ma.crm.carental.dtos.vehicule.ModelResponseDto;
 import ma.crm.carental.dtos.vehicule.VehResponseDto;
-import ma.crm.carental.entities.Client;
 import ma.crm.carental.entities.Contract;
 import ma.crm.carental.entities.DeliveryGuy;
 import ma.crm.carental.entities.Vehicule;
