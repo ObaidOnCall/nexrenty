@@ -8,10 +8,8 @@ import org.springframework.stereotype.Repository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.NoResultException;
 import jakarta.persistence.PersistenceContext;
-import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 import lombok.extern.slf4j.Slf4j;
-import ma.crm.carental.entities.Client;
 import ma.crm.carental.entities.Violation;
 import ma.crm.carental.repositories.interfaces.ViolationRepoInterface;
 
