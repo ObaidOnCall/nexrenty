@@ -38,7 +38,7 @@ import ma.crm.carental.services.VehiculeSerivce;
 
 
 @RestController
-@RequestMapping("/vehicules")
+@RequestMapping("/vehicles")
 public class VehiculeController {
     
     private final VehiculeSerivce vehiculeSerivce ;
@@ -105,7 +105,7 @@ public class VehiculeController {
      * @apiNote assurance conttorerlerfkkfkjfkjjdfjjf
      */
 
-    @PostMapping("/assurances")
+    @PostMapping("/insurances")
     public List<AssuranceResponseDto> saveAssurances(@Valid @RequestBody List<AssuranceRequestDto> assuranceRequestDtos) {
         return vehiculeSerivce.saveAssurances(assuranceRequestDtos) ;
     }
