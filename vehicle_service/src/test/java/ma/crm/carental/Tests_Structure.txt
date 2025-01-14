@@ -1,0 +1,58 @@
+how we can organize our tests using the strategies above :
+
+src/test/java/com/example/
+  ├── unit/
+  │   ├── service/
+  │   │   └── UserServiceTest.java
+  │   └── controller/
+  │       └── UserControllerUnitTest.java
+  ├── integration/
+  │   ├── UserControllerIntegrationTest.java
+  │   └── UserServiceIntegrationTest.java
+  ├── e2e/
+  │   └── UserWorkflowE2ETest.java
+  ├── user/
+  │   ├── UserControllerTest.java
+  │   ├── UserServiceTest.java
+  │   └── UserRepositoryTest.java
+  ├── order/
+  │   ├── OrderControllerTest.java
+  │   ├── OrderServiceTest.java
+  │   └── OrderRepositoryTest.java
+  ├── fast/
+  │   └── UserServiceFastTest.java
+  ├── slow/
+  │   └── UserControllerSlowTest.java
+  └── critical/
+      └── UserControllerCriticalTest.java
+
+
+
+The @AutoConfigureMockMvc annotation is a powerful feature provided by 
+Spring Boot for testing web applications. It automatically configures and 
+injects a MockMvc instance into your test class, allowing you to simulate HTTP 
+requests and validate the responses without starting a full web server.
+
+
+
+What Does @AutoConfigureMockMvc Do?
+1 - Configures MockMvc:
+
+    It sets up a MockMvc instance, which is a lightweight testing framework for simulating HTTP requests to your controllers.
+
+    MockMvc allows you to send requests (e.g., GET, POST, PUT, DELETE) and validate the responses (e.g., status codes, headers, response bodies).
+
+2- Enables Web Layer Testing:
+
+    It focuses on testing the web layer (controllers) of your application without starting a full web server (e.g., Tomcat).
+
+    This makes the tests faster and more isolated.
+
+3 - Integrates with Spring Context:
+
+    It works seamlessly with the Spring application context, allowing you to autowire beans (e.g., controllers, services) into your tests.
+
+4- Supports Annotations:
+
+    It integrates with other Spring testing annotations like @SpringBootTest, @WebMvcTest, and @ContextConfiguration.
+
