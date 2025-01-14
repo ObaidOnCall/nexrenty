@@ -9,7 +9,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.util.Assert;
 
 import lombok.extern.slf4j.Slf4j;
-import ma.crm.carental.dtos.Organization;
 import ma.crm.carental.tenantfilter.TenantContext;
 
 import org.springframework.core.convert.converter.Converter;
