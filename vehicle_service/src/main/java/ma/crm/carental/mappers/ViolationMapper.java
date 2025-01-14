@@ -10,7 +10,6 @@ import ma.crm.carental.dtos.client.ClientResponseDto;
 import ma.crm.carental.dtos.violation.ViolationRequestDto;
 import ma.crm.carental.dtos.violation.ViolationResponseDto;
 import ma.crm.carental.entities.Charge;
-import ma.crm.carental.entities.Client;
 import ma.crm.carental.entities.Violation;
 
 @Component
